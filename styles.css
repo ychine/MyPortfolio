@@ -2,11 +2,13 @@
     margin: -8px;
     display: flex;
     flex-direction: column;
+    background-color: rgb(211, 211, 211);
    
 }
 
 .content {
-
+    
+    margin-top: 30px;
     display: flex;
     flex: 3;
 
@@ -27,24 +29,28 @@
     margin: 0;
     height: 100%;
     width: 100%;
-    background-color: rgb(211, 211, 211);
+    
 
 }   
 
 .body h1 {
+    
     font-family: "Onest", sans-serif;
     font-weight: 900;
     font-size: 130px;
     padding: 0;
     margin: 0;
-    line-height: 1.3; 
+    line-height: 1; 
     background: linear-gradient(90deg, #AE64E4, #6930C3, #53A8D9, #4EDEAC, #72EF95);
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
-     display:flex; 
+    display:flex; 
+    transform: translateY(20px);
+    text-shadow: #6930C3;
 }
 
 .body h4 {
+    
     display:inline-flex;
     font-family: 'Maple Mono';
     font-weight: 300;
@@ -54,13 +60,23 @@
     background-color: #222222;
     color:aliceblue;
     padding: 0px 20px 2px 20px;
+    rotate: -1deg
     
 }
 
 .body h1:hover {
     cursor:default;
-    transform: translateY(-10px);
-    transition: transform 0.5s ease-in-out;
+    transform: translateY(5px);
+    transition: transform 1s ease-in-out;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
+}
+
+.body p:hover {
+    cursor:default;
+    transform: translateY(0px);
+    transition: transform 1s ease-in-out;
 
     
 }
@@ -72,7 +88,10 @@
     font-size: 17px;
     margin-left: 7px;
     padding: 0; 
-    line-height: 1;
+    line-height: 1.5;
+    transform: translateY(10px);
+    letter-spacing: 1px;
+    
 }
 
 .onest-regular {
