@@ -149,7 +149,7 @@ html, body {
 }
 
 .selfdesc p {
-    color: #424242;
+    color: #525252;
     flex-wrap: wrap;
     display: inline-block;
     font-family: 'Maple Mono';
@@ -161,7 +161,9 @@ html, body {
     line-height: 1.5;
     transform: translateY(10px);
     letter-spacing: 1px;
-    transition: transform 0.7s ease-in-out, background 0.7s ease-in-out;
+    transition: transform 0.7s ease-in-out,
+                background 0.7s ease-in-out,
+                color 0.7s ease-in-out;
     
 }
 
