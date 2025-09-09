@@ -11,7 +11,20 @@ html, body {
     padding: 0;
     overflow-x: hidden; 
     box-sizing: border-box;
-  
+    
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;  /* make the track invisible */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4B0082; 
+  border-radius: 10px;       
+}
+::-webkit-scrollbar {
+  width: 5px;
+         
 }
 
 .container {
@@ -92,12 +105,12 @@ html, body {
     flex-shrink: wrap;
     font-family: "Onest", sans-serif;
     font-weight: 900;
-    font-size: clamp(4.7rem, 10vw, 10rem);
+    font-size: clamp(5.5rem, 10vw, 10rem);
     letter-spacing: -5px;
     padding: 0;
     margin: 0;
     line-height: 1; 
-    background: linear-gradient(-177deg, #AE64E4, #6930C3, #53A8D9, #4EDEAC);
+    background: linear-gradient(10deg, #AE64E4 -5%, #371358 50%, #6930C3 70%, #53A8D9, #4EDEAC);
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
     display: inline-flex; 
@@ -127,14 +140,15 @@ html, body {
 
 .body h4 {
     position: relative;
-    letter-spacing: -1px;
+    letter-spacing: -1.3px;
     display: block;
     font-family: 'Onest', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
+    
     font-size: clamp(1.3rem, 2vw, 5rem);
-    margin: 0px 0px 0px 3px;
+    margin: 0px 0px -5px 3px;
     line-height: 3;
-    color: rgb(113, 72, 139);
+    color: rgb(47, 34, 54);
     padding: 0px 2px 0px;
     cursor: default;
     transform: translateY(40px);
@@ -174,19 +188,23 @@ html, body {
 .selfdesc {
     position: relative;
     z-index: 2;
+    margin-top: 10px;
 }
 
 .selfdesc p {
-    color: #525252;
+    color: #3f3f3f;
     flex-wrap: wrap;
     display: inline-block;
     font-family: 'Maple Mono';
     font-weight: 300;
-    font-size: clamp(0.7rem, 0.9vw, 1.5rem);
+    font-size: clamp(0.8rem, 0.9vw, 1.5rem);
+    background: linear-gradient(#1f1e2217 0 85%, transparent 0); 
+    background-size: 100% 1.8em; 
+    background-repeat: repeat-y;
 
     margin-left: 7px;
     padding: 0; 
-    line-height: 1.5;
+    line-height: 1.8;
     transform: translateY(10px);
     letter-spacing: 1px;
     transition: transform 0.7s ease-in-out,
@@ -237,39 +255,47 @@ html, body {
 
 
 .media-scroller {
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
     display: grid;
     grid-auto-flow: column;
     gap: 18px;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     scrollbar-width: none;
-    margin: 40px 20px;
-    height:195px;
+    margin: 20px 20px;
+    height:240px;
+    transform: translateY(-10px);
 
+}
 
-    
+.mediacont {
+    overflow: visible; 
+    position: relative; 
 }
 
 .mediacont img {
-   
+    display: block;
+    z-index: 100;
     width: 20rem;
     height: 10rem;
     object-fit: cover;
     border-radius: 10px;
     scroll-behavior: smooth;
-    transition: width 0.7s ease-in-out,
-                height 0.7s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    
 }
 
 .mediacont img:hover{
     
-    transition: width 0.7s ease-in-out,
-                height 0.7s ease-in-out,
-                box-shadow 0.7s ease-in-out;
+    transition: all 0.3s ease-in-out;
     width: 22rem;
     height: 12rem;
-    box-shadow:0px 0px 20px 0px #1c1c1c;
-
+    box-shadow:0px 0px 20px 0px #1c1c1c,
+                0px 0px 20px 0px #1c1c1c;
+     z-index: 100;
+    
     
 }
 
@@ -300,11 +326,12 @@ html, body {
     border: none;
     background-color: #ececec;
     cursor: pointer;
-  
     float: left;
     transition: background-color 1s ease-in-out,
                 color 1s ease-in-out,
                 font-weight 1s ease-in-out;
+    box-shadow: 5px 5px 10px 2px #140c2021;
+    z-index: 1;
 }
 
 #github:hover {
@@ -420,6 +447,115 @@ hr {
 
 }
 
+@media (max-width: 800px ) {
+    .point-tiles {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+        padding-inline: 10px; 
+    }
+
+    .point-tiles > div {
+        width: 100%; 
+    }
+
+    .socials span {
+        display: none;
+    
+        
+    }
+
+    .socials {}
+
+    .socials button {
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        padding: 7px;
+        gap: 0;
+        width: 40px;   
+        height: 40px; 
+        float: none; 
+    }
+    
+    .socials img, 
+    .socials i, 
+    .socials svg {
+        transform: none !important; 
+        margin: 0 auto;            
+    }
+
+    .socials img {
+        width: 20px;
+        height: 20px;
+        float: none;           
+        transform: none !important;
+        margin: 0 auto;         
+        display: block;
+    }
+
+
+    .media-scroller {
+        margin: 5px 5px;
+    }
+    
+    .body h4 {
+        margin: 0px 0px 5px 3px;
+    }
+
+    .body {
+        padding: 1% 4% 0% 4%;
+    }
+
+    
+
+    
+    
+}
+
+@media (max-width: 1230px) {
+    .point-tiles > div {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 410px) {
+    .selfdesc p {
+        font-size: clamp(0.7rem, 0.9vw, 0.7rem);
+    }
+
+    .selfdesc br {
+        display: none;
+    }
+
+    .body h1 {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+    .body img {
+        display: none;
+    }
+
+    .socials button {
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        padding: 7px;
+        gap: 0;
+        width: 40px;   
+        height: 40px; 
+        float: none; 
+    }
+    
+    .socials img, 
+    .socials i, 
+    .socials svg {
+        transform: none !important; 
+        margin: 0 auto;            
+    }
+}
+
+
 .footer {
     z-index: 10;
     background-color: #1c1c1c;
@@ -471,13 +607,19 @@ hr {
     background-color: #1c1c1c;
     color: #ffffff;
     text-align: center;
-    padding: 15px 0;
+    padding: 0;
     font-family: 'Onest', sans-serif;
     font-size: 14px;
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     top: 0;
     width: 100%;
-    height: 4%;
+    height: 50px;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 
@@ -582,3 +724,13 @@ hr {
     word-wrap: break-word; 
     text-align: center; 
 }
+
+.myself {
+    position: absolute;
+    display: flex;
+    top: 7.3%;
+    width: 30%;
+    transform: translateX(96%);
+    z-index: -1;
+}
+
