@@ -396,6 +396,7 @@ hr {
     background-color: #b3b3b3; 
     margin-top: 5px; 
     margin-bottom: 9px;
+    
 }
 
 
@@ -724,10 +725,16 @@ hr {
 
 .myself {
     position: absolute;
-    display: flex;
-    top: 7.3%;
-    width: 30%;
-    transform: translateX(96%);
-    z-index: -1;
+    right: 5%;      
+    bottom: 100%;   
+    width: 35%;      
+    z-index: 2;   
+    transform: scaleX(-1);    
+
+    filter: drop-shadow(-10px -14px 15px rgba(0, 0, 0, 0.5));
+}
+.img-section {
+    position: relative;
+    width: 100%;
 }
 
